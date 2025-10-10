@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.OCASO p {
+    font-size: 6rem;
+    letter-spacing: 10px;
+    background: linear-gradient(180deg, #ffb347, #ffcc33, #ff3c00, #6b0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #ff6a00);
+    animation: burn 4s infinite alternate ease-in-out;
+}
+
+@keyframes burn {
+    0% {
+        filter: drop-shadow(0 0 5px #ff3c00) drop-shadow(0 0 20px #ff9a00);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px #ff6600) drop-shadow(0 0 50px #ff3c00);
+        transform: scale(1.03);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 10px #ff3c00);
+        transform: scale(1);
+    }
+}
+
+.subtle p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #b3b3b3;
+    width: 60%;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    /* ← centrado horizontal */
+    letter-spacing: 1px;
+}
+
+.spark {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffcc33;
+    border-radius: 50%;
+    animation: spark 2s infinite ease-in-out;
+    opacity: 0;
+}
+
+@keyframes spark {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150px) scale(0);
+        opacity: 0;
+    }
+}
